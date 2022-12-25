@@ -1,6 +1,6 @@
 another_scene_var = 0
 
-load = function(scene, args)
+enter = function(scene, args)
   another_scene_var = args and args.test_param or 1
 end
 
