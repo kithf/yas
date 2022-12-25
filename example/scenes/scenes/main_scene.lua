@@ -7,7 +7,7 @@ ball = {
 
 some_scene_var = 1
 
-load = function(scene, args)
+enter = function(scene, args)
   some_scene_var = args and args.test_param or 1
 end
 
@@ -29,6 +29,6 @@ draw = function(scene)
   love.graphics.circle("fill", ball.x, ball.y, 10)
 end
 
-unload = function(scene)
-  print "Unload"
+exit = function(scene)
+  print "Exit"
 end
