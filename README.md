@@ -23,7 +23,7 @@ default = true
 
 some_var = 42
 
-load = function()
+enter = function()
   print "Just loaded main scene!"
 end
 
