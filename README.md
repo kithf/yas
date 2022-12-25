@@ -131,7 +131,7 @@ print(yas.previous())
 #### yas.add(key: `string`, scene: `table`)
 This function will add scene to scenes table.
 ```lua
-yas.add("scene1", {load = function() print "Loaded scene1!" end})
+yas.add("scene1", {enter = function() print "Loaded scene1!" end})
 ```
 
 #### yas.remove(key: `string`)
