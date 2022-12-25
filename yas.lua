@@ -37,7 +37,7 @@ end
 -- main_scene.lua
 default = true
 
-load = function()
+enter = function()
   print("Loaded main scene")
 end
 
@@ -118,8 +118,8 @@ load_scenes = function(base_path, env)
     current_scene = strip_ext(file_name(files[1]))
   end
 
-  if scenes[current_scene].load then
-    scenes[current_scene]:load()
+  if scenes[current_scene].enter then
+    scenes[current_scene]:enter()
   end
 end
 
@@ -146,8 +146,8 @@ local load_manual = function(conf, env)
     current_scene = conf[1].key
   end
 
-  if scenes[current_scene].load then
-    scenes[current_scene]:load()
+  if scenes[current_scene].enter then
+    scenes[current_scene]:enter()
   end
 end
 
@@ -166,7 +166,7 @@ local callbacks = {
   "touchpressed",
   "gamepadaxis",
   "joystickaxis",
-  "load",
+  --"load",
   "visible",
   "mousepressed",
   "quit",
@@ -214,8 +214,8 @@ end
 export.set = function(key, params)
   params = params or {}
 
-  if scenes[current_scene].unload then
-    scenes[current_scene]:unload(params)
+  if scenes[current_scene].exit then
+    scenes[current_scene]:exit(params)
   end
 
   if scenes[key] then
@@ -225,8 +225,8 @@ export.set = function(key, params)
     print("Scene " .. key .. " does not exist")
   end
 
-  if scenes[current_scene].load then
-    scenes[current_scene]:load(params)
+  if scenes[current_scene].enter then
+    scenes[current_scene]:enter(params)
   end
 end
 
