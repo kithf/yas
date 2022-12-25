@@ -8,6 +8,8 @@ Just drop-in and write your scene.
 Copy `yas.lua` into your directory with game and require it in `love.load`.
 
 ## Example
+You can see some other examples in `examples/` folder.
+
 ```lua
 -- main.lua
 function love.load()
