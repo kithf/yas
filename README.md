@@ -63,7 +63,10 @@ You can define callbacks from LÖVE in scene file, that defined in [LÖVE docume
 #### **pause**
 This function will be called when scene is paused and drawing. It can be called by `yas.toggle` or `toggle_scene` function or when you switch to another scene.
 
-#### **unload**
+#### **enter**
+This function will be called when scene is loaded. It can be called by `yas.set` or `set_scene` function or when you switch to another scene.
+
+#### **exit**
 This function will be called when scene is unloaded. It can be called by `yas.set` or `set_scene` function or when you switch to another scene.
 
 #### Default scene
